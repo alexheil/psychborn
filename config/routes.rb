@@ -14,6 +14,6 @@ Rails.application.routes.draw do
     get "sign_out", to: "admins/sessions#destroy"
   end
 
-  resources :posts, controller: 'posts/posts', except: :index
+  resources :posts, controller: 'posts/posts', except: :index, path: ""
 
 end

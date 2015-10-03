@@ -129,6 +129,7 @@ main {
       font-family: $fancy-font;
       padding: 2vh 2vw;
       margin-bottom: -20px;
+      box-sizing: border-box;
     }
     li {
       padding: 0 2vw;

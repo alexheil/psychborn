@@ -10,7 +10,7 @@
     <span>By Alex Heil. Follow him on Twitter <a href="https://twitter.com/realalexheil">here</a>.</span>
     <article>
       <%= sanitize(post.content).split("<h3>").first %>
-      <%= link_to "read more...", post_path(post) %>
+      <%= link_to "Read more...", post_path(post) %>
     </article>
     <% end %>
   <% else %>
