@@ -1,0 +1,19 @@
+<%= render 'partials/header' %>
+
+<main>
+  <% if @posts.any? %>
+    <% @posts.each do |post| %>
+    <h2>
+      <%= link_to post.title, post_path(post) %>
+    </h2>
+    <img srcset="<%= post.image %>" width="100%" height="auto" />
+    <span>By Alex Heil. Follow him on Twitter <a href="https://twitter.com/realalexheil">here</a>.</span>
+    <article>
+      <%= sanitize(post.content).split("<h3>").first %>
+      <%= link_to "read more...", post_path(post) %>
+    </article>
+    <% end %>
+  <% else %>
+    There are no posts on the site. Go home now.
+  <% end %>
+</main>

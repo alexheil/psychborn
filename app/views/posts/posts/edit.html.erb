@@ -1,0 +1,27 @@
+<%= provide(:title,  "Edit " + sanitize(@post.title)) %>
+
+<%= render 'partials/header' %>
+
+<main>
+
+  <h2>Edit <%= @post.title %></h2>
+
+  <%= form_for(@post, url: post_path) do |f| %>
+    <div>
+      <%= f.text_field :title, placeholder: "title" %>
+    </div>
+    <div>
+      <%= f.text_field :slug, placeholder: "slug" %>
+    </div>
+    <div>
+      <%= f.text_field :image, placeholder: "image" %>
+    </div>
+    <div>
+      <%= f.text_area :content, placeholder: "content" %>
+    </div>
+    <div>
+      <%= f.submit "edit post" %>
+    </div>
+  <% end %>
+
+</main>

@@ -1,0 +1,33 @@
+<%= provide(:title,  sanitize(@post.title)) %>
+
+<%= render 'partials/header' %>
+
+<main>
+  <h2>
+    <%=@post.title %>
+  </h2>
+  <img srcset="<%= @post.image %>" width="100%" height="auto" />
+  <span>By Alex Heil. Follow him on Twitter <a href="https://twitter.com/realalexheil">here</a>.</span>
+  <article>
+    <%= sanitize(@post.content) %>
+  </article>
+  <nav>
+    <h3>Share this on...?</h3>
+    <ul>
+      <li>facebook</li>
+      <li>twitter</li>
+    </ul>
+  </nav>
+  <nav>
+    <ul>
+    <% if Post.exists?(@post.id + 1) %>
+        <li>< Next - <%= link_to "#{Post.find(@post.id + 1).title}", post_path(Post.find(@post.id + 1)) %></li>
+      <% else %>
+      <% end %>
+      <% if Post.exists?(@post.id - 1) %>
+        <li><%= link_to "#{Post.find(@post.id - 1).title}", post_path(Post.find(@post.id - 1)) %> -  Previous ></li>
+      <% else %>
+      <% end %>
+    </ul>
+  </nav>
+</main>
