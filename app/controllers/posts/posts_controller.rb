@@ -14,10 +14,8 @@ class Posts::PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.admin_id = current_admin.id
     if @post.save
-      flash[:notice] = "you just created " + @post.title + "!"
       redirect_to post_path(@post)
     else
-      flash.now[:alert] = 'you messed up, bruh.'
       render 'new'
     end
   end
@@ -29,24 +27,21 @@ class Posts::PostsController < ApplicationController
   def update
     @post = Post.friendly.find(params[:id])
     if @post.update_attributes(post_params)
-      flash[:notice] = "good job"
       redirect_to post_path(@post)
     else
-      flash.now[:alert] = 'bad job'
       render 'edit'
     end
   end
 
   def destroy
     @post = Post.friendly.find(params[:id]).destroy
-    redirect_to posts_path
-    flash[:notice] = "delete successful"
+    redirect_to root_url
   end
 
   private
 
     def post_params
-      params.require(:post).permit(:title, :content, :category, :slug, :image)
+      params.require(:post).permit(:title, :content, :slug, :image)
     end
 
 end

@@ -28,6 +28,10 @@ body {
   font-family: $normal-font;
 }
 
+header, main, footer {
+  display: block;
+}
+
 a {
   text-decoration: none;
   color: $main-color;
@@ -114,7 +118,7 @@ main {
     font-size: .85em;
   }
   img {
-    margin: 1vh 0;
+    margin: 3vh 0;
   }
   article {
     word-break: break-word;
@@ -156,6 +160,9 @@ main {
 form {
   width: 100%;
   margin: 0 auto;
+  label {
+    font-family: $fancy-font;
+  }
   input {
     width: 100%;
     padding: 2vh 2vw;

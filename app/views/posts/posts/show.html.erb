@@ -7,7 +7,7 @@
     <%=@post.title %>
   </h2>
   <img srcset="<%= @post.image %>" width="100%" height="auto" />
-  <span>By Alex Heil. Follow him on Twitter <a href="https://twitter.com/realalexheil">here</a>.</span>
+  <span>By Alex Heil. Follow him on Twitter <a href="https://twitter.com/realalexheil">here</a>. <%= link_to "Hello, Alex.", post_path, data: { confirm: "Care for some Mighty Taco?" }, method: :delete if admin_signed_in? %></span>
   <article>
     <%= sanitize(@post.content) %>
   </article>
