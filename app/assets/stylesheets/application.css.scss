@@ -38,7 +38,7 @@ a {
   -webkit-transition: .3s;
   -moz-transition: .3s;
   -o-transition: .3s;
-    &:hover {
+  &:hover {
     color: $my-black;
     -webkit-transition: .3s;
     -moz-transition: .3s;
@@ -97,7 +97,7 @@ header {
     font-weight: 300;
     font-size: 5em;
     margin: 10vh 0 15vh 0;
-    a{
+    a {
       color: $my-black;
     }
   }
